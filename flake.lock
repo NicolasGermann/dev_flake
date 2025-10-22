@@ -1,0 +1,60 @@
+{
+  "nodes": {
+    "helix-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758892955,
+        "narHash": "sha256-CkevNUdNguWieHnm6ZJhAlZ3Nt2SnUjl3fbBNx5VELc=",
+        "owner": "nicolasgermann",
+        "repo": "helix_config",
+        "rev": "5463c9c3e88735d7b4eec13fdcfde3f19cb2681b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicolasgermann",
+        "repo": "helix_config",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1761164169,
+        "narHash": "sha256-V1koikW44k0I6eD0QnVVEvSRBW0gHL1EaqnuVnPD5hU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e63b1a005e2c549b1e56807e65b31ca53e24c01e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "helix-config": "helix-config",
+        "nixpkgs": "nixpkgs",
+        "zellij-config": "zellij-config"
+      }
+    },
+    "zellij-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758891461,
+        "narHash": "sha256-gQjBXwmEQnEww2L0Z4vjq+LoNmvlcYuYdiFrIMP+olA=",
+        "owner": "nicolasgermann",
+        "repo": "zellij_config",
+        "rev": "daa839157bded478ea29ebc610337b33e0954350",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicolasgermann",
+        "repo": "zellij_config",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
