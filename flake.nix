@@ -1,5 +1,5 @@
 {
-  description = "A development environment with Zellij and Helix";
+  description = "A development environment with Zellij, neovim and Helix";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
@@ -11,9 +11,13 @@
       url = "github:nicolasgermann/zellij_config";
       flake = false;
     };
+    nvim-config = {
+      url = "github:nicolasgermann/nvim_config";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, helix-config, zellij-config }: let
+  outputs = { self, nixpkgs, helix-config, zellij-config, nvim-config }: let
     # Helper function: build shell for any supported system
     forAllSystems = nixpkgs.lib.genAttrs [
       "aarch64-darwin"
@@ -33,15 +37,20 @@
           pkgs.neovim
         ];
 
-        shellHook = ''
-          mkdir -p "$(pwd)/.config/helix"
-          mkdir -p "$(pwd)/.config/zellij"
-          export XDG_CONFIG_HOME="$(pwd)/.config"
+	shellHook = ''
+	  mkdir -p "$(pwd)/.config/helix"
+	  mkdir -p "$(pwd)/.config/zellij"
+	  mkdir -p "$(pwd)/.config/nvim"
+	  mkdir -p "$(pwd)/.local/share"
+	  export XDG_CONFIG_HOME="$(pwd)/.config"
+	  export XDG_DATA_HOME="$(pwd)/.local/share"
 
-          # Copy configs into local .config directory
-          cp -r ${helix-config}/. "$XDG_CONFIG_HOME/helix/"
-          cp -r ${zellij-config}/. "$XDG_CONFIG_HOME/zellij/"
-        '';
+	  # Kopiere Configs ins lokale .config-Verzeichnis
+	  cp -r ${helix-config}/. "$XDG_CONFIG_HOME/helix/"
+	  cp -r ${zellij-config}/. "$XDG_CONFIG_HOME/zellij/"
+	  cp -r ${nvim-config}/. "$XDG_CONFIG_HOME/nvim/"
+	'';
+
       };
     in {
       default = baseShell;
