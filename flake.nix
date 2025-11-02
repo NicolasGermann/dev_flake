@@ -35,6 +35,7 @@
           pkgs.zellij
           pkgs.helix
           pkgs.neovim
+	  pkgs.unzip
         ];
 
 	shellHook = ''
