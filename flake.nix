@@ -61,12 +61,14 @@
           pkgs.dotnet-sdk
           pkgs.omnisharp-roslyn
         ];
+        shellHook = baseShell.shellHook;
       };
 
       python = pkgs.mkShell {
         buildInputs = baseShell.buildInputs ++ [
           pkgs.python3
         ];
+        shellHook = baseShell.shellHook;
       };
 
     });
