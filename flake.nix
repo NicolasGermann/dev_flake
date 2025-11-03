@@ -65,6 +65,15 @@
         shellHook = baseShell.shellHook;
       };
 
+      mqtt = pkgs.mkShell {
+	buildInputs = baseShell.buildInputs ++ [
+          pkgs.dotnet-sdk
+          pkgs.omnisharp-roslyn
+	  pkgs.mosquitto
+	];
+	shellHook = baseShell.shellHook;
+      };
+
       python = pkgs.mkShell {
         buildInputs = baseShell.buildInputs ++ [
           pkgs.python3
