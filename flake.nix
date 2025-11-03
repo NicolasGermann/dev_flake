@@ -47,6 +47,7 @@
 	  export XDG_DATA_HOME="$(pwd)/.local/share"
 
 	  # Kopiere Configs ins lokale .config-Verzeichnis
+	  echo ShellHook!
 	  cp -r ${helix-config}/. "$XDG_CONFIG_HOME/helix/"
 	  cp -r ${zellij-config}/. "$XDG_CONFIG_HOME/zellij/"
 	  cp -r ${nvim-config}/. "$XDG_CONFIG_HOME/nvim/"
