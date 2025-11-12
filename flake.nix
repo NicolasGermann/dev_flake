@@ -33,6 +33,7 @@
       baseShell = pkgs.mkShell {
         buildInputs = [
           pkgs.zellij
+          pkgs.lazygit
           pkgs.helix
           pkgs.neovim
 	  pkgs.unzip
