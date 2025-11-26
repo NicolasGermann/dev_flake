@@ -82,6 +82,14 @@
         shellHook = baseShell.shellHook;
       };
 
+      typst = pkgs.mkShell {
+        buildInputs = baseShell.buildInputs ++ [
+          pkgs.typst
+          pkgs.tinymist
+        ];
+        shellHook = baseShell.shellHook;
+      };
+
     });
   };
 }
