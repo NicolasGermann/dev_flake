@@ -34,6 +34,7 @@
         buildInputs = [
           pkgs.zellij
           pkgs.lazygit
+          pkgs.git
           pkgs.helix
           pkgs.neovim
 	  pkgs.unzip
